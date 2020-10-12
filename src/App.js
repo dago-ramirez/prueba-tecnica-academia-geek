@@ -6,6 +6,7 @@ export const DataContext = createContext(null);
 
 
 function App() {
+  const [cookies, setCookies] = useState({})
   const [btnSubmit, setBtnSubmit] = useState(false);
   const [datos, setDatos] = useState({
     'nombres': '',
@@ -15,10 +16,9 @@ function App() {
     'email': '',
     'usuario-github': ''
 });
-  let cookies = {};
   return (
     <div className="App">
-      <DataContext.Provider value={{ cookies, btnSubmit, setBtnSubmit, datos, setDatos }} >
+      <DataContext.Provider value={{ cookies, setCookies, btnSubmit, setBtnSubmit, datos, setDatos }} >
         <Header />
         <Registro />
       </DataContext.Provider>
