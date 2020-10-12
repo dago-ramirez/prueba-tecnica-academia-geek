@@ -1,38 +1,29 @@
 import React, { useContext } from 'react';
+import { useCookies } from 'react-cookie';
 import { DataContext } from '../App';
 
 export default function Registro() {
-    const { cookies, setBtnSubmit, datos, setDatos } = useContext(DataContext);
+    const { setData } = useContext(DataContext);
+    const [cookies, setCookie] = useCookies(['nombres',
+                                             'apellidos',
+                                             'cedula',
+                                             'fecha-nacimiento',
+                                             'email',
+                                             'usuario-github']);
     
     const handleInputChange = (event) => {
         const target = event.target;
-        setBtnSubmit(false);
-        setDatos({
-            ...datos,
-            [target.name]: target.value
-        });
-        createCookie(target.name, target.value);
+        setCookie(
+            target.name,
+            target.value,
+            { path: '/' }
+        );
     };
 
     const sendData = (event) => {
         event.preventDefault();
-        console.log(cookies)
-        // Se guardan las cookies en forma de objeto
-        document.cookie.split(';')
-        .map(item => item.split('='))
-        .forEach(element => cookies[element[0]] = element[1]);
-        setBtnSubmit(true);
+        setData(cookies);
         document.getElementById('my-form').reset();
-        console.log(cookies)
-    }
-
-    const createCookie = (name, value) => {
-        const date = new Date();
-        // Se configura la fecha de caducidad de las cookies a 7 días
-        date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
-        const expires =  "; expires="+date.toGMTString();
-        // Se guarda la cookie
-        document.cookie = name + "=" + value + expires;
     }
 
     return (
