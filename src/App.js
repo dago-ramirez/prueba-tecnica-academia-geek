@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { CookiesProvider } from 'react-cookie';
-// import Header from './components/Header';
-// import Registro from './components/Registro';
+import Header from './components/Header';
+import Registro from './components/Registro';
 import Repositorios from './components/Repositorios';
 
 export const DataContext = createContext(null);
@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <CookiesProvider >
         <DataContext.Provider value={{ data, setData }} >
-          {/* <Header />
-          <Registro /> */}
+          <Header />
+          <Registro />
           <Repositorios />
         </DataContext.Provider>
       </CookiesProvider>
