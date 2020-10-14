@@ -12,7 +12,7 @@ You'll need [Node.js](https://nodejs.org/en/) on your local development machine.
 
 ## Up and running
 
-#### Run $ `npm start`
-Visit http://localhost:3000
+1 #### Run $ `npm start`
+2 Visit http://localhost:3000
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
