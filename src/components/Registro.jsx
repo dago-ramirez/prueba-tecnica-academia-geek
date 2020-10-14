@@ -29,7 +29,7 @@ export default function Registro() {
     return (
         <div className='flex flex-col items-center justify-center mx-4' >
             <h1 className="text-2xl sm:text-3xl text-center text-gray-700 mt-16 mb-6 font-bold w-full sm:w-4/6 md:w-3/6" >Registro de Información de Candidato</h1>
-            <form id="my-form" onSubmit={sendData} className='w-full sm:w-4/6 md:w-3/6 mb-24 flex flex-col shadow-xl border-2 border-gray-700 rounded-lg' >
+            <form id="my-form" onSubmit={sendData} className='w-full sm:w-4/6 md:w-3/6 mb-24 flex flex-col bg-green-400 shadow-xl border-2 border-gray-700 rounded-lg' >
                 <div className="mb-4 mx-6 lg:mx-24 mt-10">
                     <label className="block text-gray-700 text-lg sm:text-xl font-bold mb-2" htmlFor="nombres">
                         Nombres

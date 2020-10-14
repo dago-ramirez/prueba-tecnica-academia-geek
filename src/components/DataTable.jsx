@@ -1,36 +1,46 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles'
 import MaterialTable from 'material-table';
+
+const styles = makeStyles({
+    tableStyle: {
+        backgraounColor: 'bg-green-400'
+    }
+})
 
 const tableHeader = [
     {
-        tittle: "Nombre",
+        title: "Nombre",
         field: "nombre"
     },
     {
-        tittle: "Descripción",
+        title: "Descripción",
         field: "descripcion"
     },
     {
-        tittle: "Lenguaje",
+        title: "Lenguaje",
         field: "lenguaje"
     },
     {
-        tittle: "Rama",
+        title: "Rama",
         field: "rama"
     },
     {
-        tittle: "URL",
+        title: "URL",
         field: "url"
     }
 ]
 
 export default function DataTable({ data }) {
+    const style = styles;
     return (
         <>
             <MaterialTable
                 columns={tableHeader} 
                 data={data}
                 title='Repositorios'
+                color='primary'
+                className={style.tableStyle}
             />
         </>
     )

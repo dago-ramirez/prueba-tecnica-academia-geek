@@ -20,8 +20,8 @@ export default function Header() {
                </div>
     });
     return (
-        <>
+        <div className="bg-green-400 py-4" >
             {INFO}
-        </>
+        </div>
     )
 }
