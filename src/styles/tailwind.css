@@ -2,4 +2,66 @@
 
 @tailwind components;
 
+    .form {
+        @apply mb-10 flex flex-col shadow-xl border-2 bg-green-400 border-gray-700 rounded-lg;
+    }
+
+    .label {
+        @apply block text-gray-700 text-lg font-bold mb-2;
+    }
+
+    .h1 {
+        @apply text-2xl text-center text-gray-700 mt-16 mb-6 font-bold w-full;
+    }
+
+    .input {
+        @apply px-3 py-2 rounded text-lg;
+    }
+
+    .input:focus {
+        @apply outline-none shadow-outline;
+    }
+
+    .input-type {
+        @apply shadow appearance-none border w-full text-gray-700 mb-3 leading-tight;
+    }
+
+    .input-submit {
+        @apply text-white font-bold mx-2 cursor-pointer;
+    }
+
+    .submit-blue {
+        @apply bg-blue-500;
+    }
+
+    .submit-blue:hover {
+        @apply bg-blue-700;
+    }
+
+    .submit-red {
+        @apply bg-red-500;
+    }
+
+    .submit-red:hover {
+        @apply bg-red-700;
+    }
+
+    @screen sm {
+        .h1 {        
+            @apply w-4/6 text-3xl;
+        }
+        .label {
+            @apply text-xl;
+        }
+        .input-type {        
+            @apply text-xl;
+        }
+    }
+
+    @screen md {
+        .h1 {
+            @apply w-3/6;
+        }
+    }
+
 @tailwind utilities;
